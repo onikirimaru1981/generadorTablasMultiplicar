@@ -8,7 +8,7 @@ Recuerden que para reconstruir los módulos de node deben de ejecutar este coman
 npm install
 ```
 
-Para iniciar la aplicacion,escribir en la terminal del directorio del programa
+Para iniciar la aplicacion,escribir en la terminal del directorio del programa y escribir lo siguiente:
 
 ```
 node app -t (espacio numero de tabla de multiplicar) -l(para ver en terminal la tabla generada) -u (espacio numero que establecera el limite de dicha tabla)
