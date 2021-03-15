@@ -1,31 +1,40 @@
 const fs = require('fs');
+const colors = require('colors');
 
 
-const crearArchivo = async (tabla, listar = false) => {
+const crearArchivo = async (tabla, listar = false, limite) => {
     let salida = '';
+    let codigo = '';
 
 
     try {
 
 
-        for (let i = 0; i <= 10; i++) {
+        for (let i = 0; i <= limite; i++) {
 
             const resultado = i * tabla
 
 
+
+
             salida += `${tabla} X ${i} = ${resultado}\n`;
+            codigo += `${tabla}`.yellow + ` ${'X'.magenta} ` + `${i}`.yellow + ` ${'='.green}`.yellow + ` ${resultado}\n`.yellow;
+
 
         };
         if (listar) {// Con esta condicion hacemos que muestre este contenido o no,en funcion si con el argumento en consola va con -l
-            console.log('=======TABLA DE MULTIPLICAR DEL:', tabla, ' =======');
-            console.log(salida)
+            console.log(`                            =============================================`.rainbow + `====
+                            =======`.rainbow + ` TABLA DE MULTIPLICAR DEL: `.green + `${tabla} `.yellow + `=============
+                            ==`.rainbow + `===============================================`.rainbow);
+
+            console.log(codigo);
         };
 
 
 
         fs.writeFileSync(`./salida/tabla_del_${tabla}.txt`, salida);// podemos indicarle al writeFileSync donde deseamos que se ubique el archivo generado
 
-        return `Tabla-${tabla}.txt archivo creado`;// Recordar que cuando transformamos la funcion en 
+        return `Tabla-${tabla}.txt`.green + ` archivo creado`.rainbow;// Recordar que cuando transformamos la funcion en 
         // asincrona,el resultado hay que devolverlo siempre con un return
 
 
@@ -52,3 +61,4 @@ module.exports = {
 
 
 }
+
