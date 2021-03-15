@@ -1,6 +1,6 @@
 {
   "name": "03-bases-node",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "description": "Es una simple tabla de multiplicar con archivo de txt",
   "main": "app.js",
   "scripts": {
